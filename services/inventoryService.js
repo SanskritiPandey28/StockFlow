@@ -33,6 +33,9 @@ const createInventory = async (productId, warehouseId, quantity) => {
             "Inventory already exists for this product and warehouse"
         );
     }
+    
+
+
 
 
     // Create inventory
