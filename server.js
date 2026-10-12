@@ -7,6 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const warehouseRoutes = require("./routes/warehouseRoutes");
 const inventoryRoutes= require("./routes/inventoryRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 
 const app = express();
 
@@ -19,7 +20,8 @@ connectDB();
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/warehouses", warehouseRoutes);
-app.use("/api/inventories",inventoryRoutes)
+app.use("/api/inventories",inventoryRoutes);
+app.use("/api/cart", cartRoutes);
 
 app.get("/", (req, res) => {
     res.send("Welcome to StockFlowApi");
