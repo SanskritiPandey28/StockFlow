@@ -1,0 +1,11 @@
+
+const express = require("express");
+const router = express.Router();
+
+const authMiddleware = require("../middleware/authMiddleware");
+const { createOrder } = require("../controllers/orderController");
+
+// Place an order (authenticated users only)
+router.post("/", authMiddleware, createOrder);
+
+module.exports = router;
